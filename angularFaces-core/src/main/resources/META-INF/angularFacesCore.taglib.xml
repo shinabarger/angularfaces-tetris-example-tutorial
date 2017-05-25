@@ -1,0 +1,81 @@
+<facelet-taglib version="2.0"
+	xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-facelettaglibrary_2_0.xsd">
+
+	<namespace>http://beyondjava.net/angularFacesCore</namespace>
+
+	<tag>
+		<tag-name>addLabelsAndMessages</tag-name>
+		<handler-class>de.beyondjava.angularFaces.components.puiLabel.AddLabelsAndMessagesHandler</handler-class>
+	</tag>
+
+	<tag>
+		<tag-name>body</tag-name>
+		<component>
+			<component-type>javax.faces.OutputBody</component-type>
+			<handler-class>de.beyondjava.angularFaces.components.puiLabel.BodyTagHandler</handler-class>
+		</component>
+	</tag>
+    
+    <tag>
+        <tag-name>include</tag-name>
+        <component>
+            <component-type>javax.faces.OutputBody</component-type>
+            <handler-class>de.beyondjava.angularFaces.core.i18n.LanguageAwareIncludeHandler</handler-class>
+        </component>
+    </tag>
+    
+    
+	<tag>
+		<description><![CDATA[ngsync (aka ai:sync) synchronizes a JSF bean with an AngularJS model and vice versa.]]></description>
+		<tag-name>sync</tag-name>
+		<component>
+			<component-type>de.beyondjava.sync</component-type>
+			<renderer-type>de.beyondjava.sync</renderer-type>
+		</component>
+		<attribute>
+			<description><![CDATA["clientToServer", "serverToClient" or "both"]]></description>
+			<name>direction</name>
+			<required>false</required>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[the bean or bean attribute to synchronize, given as an AngularJS expression]]></description>
+			<name>value</name>
+			<required>true</required>
+			<type>java.lang.String</type>
+		</attribute>
+		<attribute>
+			<description><![CDATA[The list of attributes of this tag.]]></description>
+			<name>angularfacesattributes</name>
+			<required>false</required>
+			<type>java.lang.String</type>
+		</attribute>
+	</tag>
+	<tag>
+		<description><![CDATA[A simple HTML div wrapped as a JSF component.]]></description>
+		<tag-name>puiDiv</tag-name>
+		<component>
+			<component-type>de.beyondjava.puiDiv</component-type>
+			<renderer-type>de.beyondjava.puiDiv</renderer-type>
+		</component>
+	</tag>
+	<tag>
+		<description><![CDATA[A simple HTML span wrapped as a JSF component.]]></description>
+		<tag-name>puiSpan</tag-name>
+		<component>
+			<component-type>de.beyondjava.puiSpan</component-type>
+			<renderer-type>de.beyondjava.puiSpan</renderer-type>
+		</component>
+	</tag>
+
+	<tag>
+		<description><![CDATA[Update the AngularJS model after an AJAX request.]]></description>
+		<tag-name>updateModelAfterAJAXRequest</tag-name>
+		<component>
+			<component-type>de.beyondjava.puiUpdateModelAfterAJAXRequests</component-type>
+			<renderer-type>de.beyondjava.puiUpdateModelAfterAJAXRequests</renderer-type>
+		</component>
+	</tag>
+
+</facelet-taglib>
